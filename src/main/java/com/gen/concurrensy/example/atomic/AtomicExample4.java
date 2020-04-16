@@ -9,6 +9,11 @@ import java.util.concurrent.atomic.AtomicReference;
 @ThreadSafe
 public class AtomicExample4 {
 
+    /**
+     * compareAndSet(v1,v2)
+     * 当前值与v1作比较，若相等则将值更新为v2
+     */
+
     private static AtomicReference<Integer> count = new AtomicReference<>(0);
 
     public static void main(String[] args) {

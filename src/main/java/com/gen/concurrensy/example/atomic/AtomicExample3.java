@@ -19,6 +19,7 @@ public class AtomicExample3 {
     // 同时并发执行的线程数
     public static int threadTotal = 200;
 
+    //在较高并发的情形下，相较于 AtomicLong 有更好的性能
     public static LongAdder count = new LongAdder();
 
     public static void main(String[] args) throws Exception {
