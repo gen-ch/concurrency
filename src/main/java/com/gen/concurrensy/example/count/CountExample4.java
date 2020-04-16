@@ -10,7 +10,7 @@ import java.util.concurrent.Semaphore;
 
 @Slf4j
 @NotThreadSafe
-public class CountExample1 {
+public class CountExample4 {
 
     // 请求总数
     public static int clientTotal = 5000;
@@ -18,7 +18,7 @@ public class CountExample1 {
     // 同时并发执行的线程数
     public static int threadTotal = 200;
 
-    public static int count = 0;
+    public static volatile int count = 0;
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -43,5 +43,8 @@ public class CountExample1 {
 
     private static void add() {
         count++;
+        // 1、count
+        // 2、+1
+        // 3、count
     }
 }
