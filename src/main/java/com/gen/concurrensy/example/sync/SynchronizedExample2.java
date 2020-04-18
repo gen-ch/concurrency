@@ -38,8 +38,6 @@ public class SynchronizedExample2 {
         executorService.execute(() -> {
             example1.test1(1);
         });
-        executorService.execute(() -> {
-            example2.test1(2);
-        });
+        executorService.execute(() -> example2.test1(2));
     }
 }

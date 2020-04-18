@@ -11,6 +11,12 @@ public class UnsafePublish {
 
     private String[] states = {"a", "b", "c"};
 
+    /**
+     * 通过public方法返回一个private属性，
+     * 外部有通过public方法修改private属性的风险
+     * 不安全
+     * @return
+     */
     public String[] getStates() {
         return states;
     }
@@ -19,6 +25,9 @@ public class UnsafePublish {
         UnsafePublish unsafePublish = new UnsafePublish();
         log.info("{}", Arrays.toString(unsafePublish.getStates()));
 
+        /*
+
+         */
         unsafePublish.getStates()[0] = "d";
         log.info("{}", Arrays.toString(unsafePublish.getStates()));
     }
