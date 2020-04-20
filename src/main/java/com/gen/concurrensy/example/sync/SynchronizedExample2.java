@@ -33,7 +33,7 @@ public class SynchronizedExample2 {
         ExecutorService executorService = Executors.newCachedThreadPool();
 
         /**
-         * 锁定的时当前类，两个实例属于同一个类，所以不会乱序
+         * 锁定的是当前类，两个实例属于同一个类，所以不会乱序
          */
         executorService.execute(() -> {
             example1.test1(1);
